@@ -1,43 +1,107 @@
-(venv) PS C:\Users\ajith\Downloads\for fun\cothon solution\project 1> venv\Scripts\activate
-C:\Python312\python.exe: can't open file 'C:\\Users\\ajith\\Downloads\\for fun\\cothon solution\\project 1\\autovulnscanner.py': [Errno 2] No such file or directory
-(venv) PS C:\Users\ajith\Downloads\for fun\cothon solution\project 1> python main.py dashboard --port 5000           
-2025-04-14 07:32:49,323 - AutoVulnScanner - INFO - No configuration file found. Using default configuration.
-2025-04-14 07:32:49,325 - AutoVulnScanner - ERROR - Failed to save configuration: [WinError 3] The system cannot find the path specified: ''
-Dashboard running on http://0.0.0.0:5000
- * Serving Flask app 'main'
- * Debug mode: off
-2025-04-14 07:32:49,357 - werkzeug - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.1.6:5000
-2025-04-14 07:32:49,358 - werkzeug - INFO - Press CTRL+C to quit
-2025-04-14 07:33:17,918 - werkzeug - INFO - 192.168.1.6 - - [14/Apr/2025 07:33:17] "GET / HTTP/1.1" 200 -
-2025-04-14 07:33:19,720 - werkzeug - INFO - 192.168.1.6 - - [14/Apr/2025 07:33:19] "GET /favicon.ico HTTP/1.1" 404 -
-2025-04-14 07:33:25,786 - AutoVulnScanner - INFO - Starting web scan for https://www.youtube.com/
-2025-04-14 07:33:25,787 - werkzeug - INFO - 192.168.1.6 - - [14/Apr/2025 07:33:25] "POST /scan HTTP/1.1" 200 -
-2025-04-14 07:33:28,672 - AutoVulnScanner - ERROR - Failed to connect to ZAP: Expecting value: line 1 column 1 (char 0)
-2025-04-14 07:33:28,672 - AutoVulnScanner - ERROR - Failed to set up ZAP. Is ZAP running?
-2025-04-14 07:33:28,673 - AutoVulnScanner - INFO - Generating PDF report at reports\web_scan_https_www.youtube.com__20250414073328.pdf
-2025-04-14 07:33:28,685 - AutoVulnScanner - INFO - PDF report generated successfully
-2025-04-14 07:33:28,686 - AutoVulnScanner - INFO - Generating JSON report at reports\web_scan_https_www.youtube.com__20250414073328.json
-2025-04-14 07:33:28,688 - AutoVulnScanner - INFO - JSON report generated successfully
-2025-04-14 07:33:28,689 - AutoVulnScanner - INFO - Generating CSV report at reports\web_scan_https_www.youtube.com__20250414073328.csv
-2025-04-14 07:33:28,691 - AutoVulnScanner - INFO - CSV report generated successfully
-2025-04-14 07:33:28,692 - AutoVulnScanner - INFO - Web scan completed for https://www.youtube.com/
-2025-04-14 07:33:45,732 - AutoVulnScanner - INFO - Starting network scan for https://www.youtube.com/
-2025-04-14 07:33:45,733 - werkzeug - INFO - 192.168.1.6 - - [14/Apr/2025 07:33:45] "POST /scan HTTP/1.1" 200 -
-2025-04-14 07:33:45,743 - AutoVulnScanner - ERROR - nmap is not installed. Please install nmap to use network scanning features.
-2025-04-14 07:33:45,745 - AutoVulnScanner - INFO - Generating PDF report at reports\network_scan_https___www.youtube.com__20250414073345.pdf
-2025-04-14 07:33:45,766 - AutoVulnScanner - INFO - PDF report generated successfully
-2025-04-14 07:33:45,767 - AutoVulnScanner - INFO - Generating JSON report at reports\network_scan_https___www.youtube.com__20250414073345.json
-2025-04-14 07:33:45,773 - AutoVulnScanner - INFO - JSON report generated successfully
-2025-04-14 07:33:45,773 - AutoVulnScanner - INFO - Generating CSV report at reports\network_scan_https___www.youtube.com__20250414073345.csv
-2025-04-14 07:33:45,775 - AutoVulnScanner - INFO - CSV report generated successfully
-2025-04-14 07:33:45,776 - AutoVulnScanner - INFO - Network scan completed for https://www.youtube.com/
-2025-04-14 07:39:16,391 - AutoVulnScanner - INFO - Starting web scan for https://amcec.edu.in/about-us/
-2025-04-14 07:39:16,392 - werkzeug - INFO - 192.168.1.6 - - [14/Apr/2025 07:39:16] "POST /scan HTTP/1.1" 200 -
-2025-04-14 07:39:16,405 - AutoVulnScanner - ERROR - Failed to connect to ZAP: Expecting value: line 1 column 1 (char 0)
-2025-04-14 07:39:16,406 - AutoVulnScanner - ERROR - Failed to set up ZAP. Is ZAP running?
-2025-04-14 07:39:16,407 - AutoVulnScanner - INFO - Generating PDF report at reports\web_scan_https_amcec.edu.in_about-us__20250414073916.pdf
-2025-04-14 07:39:16,415 - AutoVulnScanner - INFO - PDF report generated successfully
-2025-04-14 07:39:16,415 - AutoVulnScanner - INFO - Generating JSON report at reports\web_scan_https_a
+🛡️ AutoVulnScanner
+An automated vulnerability scanning and reporting tool for web applications and networks. It generates PDF, JSON, and CSV reports based on scan results using OWASP ZAP and Nmap.
+
+🔧 Features
+Web vulnerability scanning (via OWASP ZAP)
+
+Network vulnerability scanning (via Nmap)
+
+Report generation (PDF, JSON, CSV)
+
+Web-based dashboard interface using Flask
+
+📁 Project Structure
+graphql
+Copy
+Edit
+project/
+│
+├── main.py               # Entry point for running the dashboard
+├── config.json           # (Optional) Configuration file
+├── templates/            # HTML templates for dashboard
+├── static/               # Static files (CSS, JS)
+├── reports/              # Generated scan reports
+├── venv/                 # Virtual environment
+└── README.md
+🧰 Prerequisites
+Python 3.10+
+
+pip (Python package manager)
+
+OWASP ZAP (must be running)
+
+Nmap (for network scanning)
+
+🔌 Installation
+1. Clone the Repo
+bash
+Copy
+Edit
+git clone https://github.com/Ajithvenkat-10/AutoVulnScanner.git
+cd AutoVulnScanner
+If you face a 403 error, ensure that you're logged in as the right user or SSH is used for pushing.
+
+2. Setup Virtual Environment
+bash
+Copy
+Edit
+python -m venv venv
+venv\Scripts\activate  # On Windows
+# OR
+source venv/bin/activate  # On macOS/Linux
+3. Install Dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
+If requirements.txt is missing, regenerate it with:
+
+bash
+Copy
+Edit
+pip freeze > requirements.txt
+🚀 Running the Tool
+1. Start OWASP ZAP
+Ensure ZAP is running in the background. You can start it manually or in headless mode:
+
+bash
+Copy
+Edit
+"C:\Program Files\OWASP\Zed Attack Proxy\zap.bat"
+Or for headless automation:
+
+bash
+Copy
+Edit
+zap.sh -daemon -port 8090 -host 127.0.0.1
+2. Run the Flask Dashboard
+bash
+Copy
+Edit
+python main.py dashboard --port 5000
+Access it at: http://127.0.0.1:5000
+
+🌐 Web Interface
+Enter the target URL
+
+Choose Web Scan or Network Scan
+
+Wait for the scan to complete
+
+Download PDF/JSON/CSV reports from the reports/ folder
+
+🧪 Troubleshooting
+❗ ZAP not connected? Ensure it is running and accessible at the configured port (default: 8090)
+
+❗ Nmap not found? Download and install from https://nmap.org/download.html and add to system PATH
+
+❗ 403 Git error? Your Git credentials might belong to another user (Sne-V). Re-authenticate with your GitHub account:
+
+bash
+Copy
+Edit
+git remote set-url origin https://github.com/YOUR_USERNAME/AutoVulnScanner.git
+git config --global credential.helper manager-core
+📄 License
+MIT License
+
